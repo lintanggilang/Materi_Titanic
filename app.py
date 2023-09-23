@@ -2,8 +2,17 @@ from fastapi import FastAPI, HTTPException
 import pickle
 import pandas as pd
 from pydantic import BaseModel, Field
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load the model
 model = pickle.load(open('model.sav', 'rb'))
