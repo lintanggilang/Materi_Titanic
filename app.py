@@ -1,8 +1,8 @@
-from fastapi import FastAPI, HTTPException
-import pickle
-import pandas as pd
-from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+import pandas as pd
+import pickle
 
 app = FastAPI()
 
