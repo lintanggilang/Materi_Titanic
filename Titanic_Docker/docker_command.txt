@@ -1,0 +1,6 @@
+docker build -t img_titanic .
+
+docker run --name con_titanic img_titanic
+
+
+docker run --name con_titanic -p 8000:8000 img_titanic
